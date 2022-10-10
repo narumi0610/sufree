@@ -27,6 +27,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +44,16 @@ class _MyHomePageState extends State<MyHomePage> {
       body: const Center(
         child: Text('ホーム'),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.chat_bubble_outline), label: ''),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.account_circle_sharp), label: ''),
+          ]),
     );
   }
 }
