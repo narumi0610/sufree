@@ -24,12 +24,14 @@ class _HomeViewState extends State<HomeView> {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ElevatedButton(
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: ((context) => const FormView())),
+          Center(
+            child: ElevatedButton(
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: ((context) => const FormView())),
+              ),
+              child: const Text('思いをはきだす'),
             ),
-            child: const Text('思いをはきだす'),
           )
         ],
       ),
